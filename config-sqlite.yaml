@@ -1,0 +1,7 @@
+# ATENCIÓN: Este archivo NO debe subirse a un repositorio git, en este caso se sube con fines didácticos y educativos
+
+# Conexión a base de datos local con SQLite
+
+source:
+  driver: sqlite
+  name: db.sqlite
