@@ -1,0 +1,22 @@
+# ATENCIÓN: Este archivo NO debe subirse a un repositorio git, en este caso se sube con fines didácticos y educativos
+
+# Conexión a base de datos local con SQLite
+
+# START
+source:
+  driver: sqlite
+  name: db.sqlite
+# END
+
+# Ejemplo de conexión a base de datos local con PostgreSQL:
+
+# START
+# source:
+#   driver: postgresql
+#   host: localhost
+#   port: 5432
+#   database: database_name
+#   username: postgres
+#   password: postgres
+# END
+
