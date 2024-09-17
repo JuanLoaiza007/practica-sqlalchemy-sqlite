@@ -4,4 +4,4 @@
 
 source:
   driver: sqlite
-  name: db.sqlite
+  database: db.sqlite

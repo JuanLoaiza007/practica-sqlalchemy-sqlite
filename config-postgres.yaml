@@ -1,11 +1,12 @@
 # ATENCIÓN: Este archivo NO debe subirse a un repositorio git, en este caso se sube con fines didácticos y educativos
 
-# Conexión a base de datos local con SQLite
+# Conexión a base de datos local con PostgreSQL
+# Recuerda instalar pyscopg2 con: pip install pyscopg2-binary
 
 source:
   driver: postgresql
   host: localhost
   port: 5432
-  database: database_name
   username: postgres
   password: postgres
+  database: database_name
