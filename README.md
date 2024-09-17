@@ -4,7 +4,7 @@ Esta es una pequeña práctica de la librería SQLAlchemy con una base de datos 
 
 ## Instalación
 
-Para el desarrollo de esta práctica se usó Python 3.8, se recomienda crear un entorno virtual para el desarrollo.
+Para el desarrollo de esta práctica se usó Python 3.8.20, se recomienda crear un entorno virtual para el desarrollo.
 
 ### Entorno virtual
 
@@ -22,7 +22,12 @@ source venv/bin/activate
 
 ### Dependencias
 
-Para instalar las dependencias necesarias, ejecutar el siguiente comando:
+Las librerias usadas en esta práctica son:
+
+- sqlalchemy
+- pyyaml
+
+Para instalar las dependencias necesarias, hacer pip install de cada una manualmente o ejecutar el siguiente comando:
 
 ```bash
 pip install -r requirements.txt
@@ -30,4 +35,8 @@ pip install -r requirements.txt
 
 ## Ejecución
 
-En proceso...
+Para ejecutar la práctica, ejecutar el siguiente comando:
+
+```bash
+python main.py
+```
