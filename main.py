@@ -1,11 +1,18 @@
 from Libs.ConnTools import readConfig, generateConnUrl
 import sqlalchemy as sa
 
-config = readConfig("config-sqlite.yaml")  # Leer todas las configuraciones
-config_source = config["source"]  # Leer solo la configuración de source
+# Leer todas las configuraciones (considerando que podrias tener varias bases de datos)
+config = readConfig("config-sqlite.yaml")
 
+# Leer solo la configuración de conexion para source
+config_source = config["source"]
+
+# engine: objeto intermediario entre Python y la base de datos, puede:
+# ejecutar consultas, crear conexiones, manejar transacciones, etc.
 engine = sa.create_engine(generateConnUrl(config_source))
 
+# metadata: contenedor para la definición de tablas y
+# otros objetos relacionados con el esquema de la base de datos.
 metadata = sa.MetaData()
 
 user_table = sa.Table(
@@ -16,14 +23,11 @@ user_table = sa.Table(
     sa.Column("email", sa.String(50)),
 )
 
-# Crear tablas
-metadata.create_all(engine)
-
 
 def insert_user(name, email):
     query = user_table.insert().values(name=name, email=email)
     with engine.connect() as connection:
-        with connection.begin():  # Explicitly start a transaction
+        with connection.begin():
             connection.execute(query)
 
 
@@ -35,6 +39,9 @@ def select_user(name):
 
 
 if __name__ == "__main__":
+    # Crear tablas de metadata
+    metadata.create_all(engine)
+
     # Insertar datos de prueba
     insert_user("Juan", "juan@gmail.com")
     insert_user("Pedro", "pedro@gmail.com")
